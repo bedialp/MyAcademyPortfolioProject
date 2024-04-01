@@ -4,22 +4,22 @@
     <div class="container">
         <div class="testimonial-icon">
             <i class="fa fa-quote-left"></i>
-        </div>
-        @foreach (var item in Model)
-        {
             <div class="owl-carousel testimonials-carousel">
-                <div class="testimonial-item">
-                    <div class="testimonial-img">
-                        <img src="@item.ImageUrl" alt="Image">
+                @foreach (var item in Model)
+                {
+                    <div class="testimonial-item">
+                        <div class="testimonial-img">
+                            <img src="@item.ImageUrl" alt="Image">
+                        </div>
+                        <div class="testimonial-text">
+                            <h4>@item.Title</h4>
+                            <p>@item.Comment </p>
+                            <h3>@item.NameSurname</h3>
+                            <h4>@item.CommentDate</h4>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        <h4>@item.Title</h4>
-                        <p>@item.Comment </p>
-                        <h3>@item.NameSurname</h3>
-                        <h4>@item.CommentDate</h4>
-                    </div>
-                </div>
+                }
             </div>
-        }
+        </div>
     </div>
 </div>

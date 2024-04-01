@@ -20,6 +20,7 @@ namespace MyPortfolio.Controllers
             return View(values);
         }
 
+        // HAKKIMDA EKLEME İŞLEMİ
         [HttpGet]
         public ActionResult AddAbout()
         {
@@ -33,7 +34,8 @@ namespace MyPortfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        
+        // HAKKIMDA SİLME İŞLEMİ
         public ActionResult DeleteAbout(int id)
         {
             var about = db.TblAbouts.Find(id);
@@ -43,6 +45,7 @@ namespace MyPortfolio.Controllers
             return RedirectToAction("Index");
         }
 
+        // HAKKIMDA GÜNCELLEME İŞLEMİ
         [HttpGet]
         public ActionResult UpdateAbout(int id)
         {
