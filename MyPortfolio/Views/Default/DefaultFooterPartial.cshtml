@@ -1,0 +1,23 @@
+﻿@model List<MyPortfolio.Models.TblContacts>
+
+<div class="footer wow fadeIn" data-wow-delay="0.3s">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="footer-info">
+                @foreach (var item in Model)
+                {
+                    <h2>@item.NameSurname</h2>
+                    <h3>@item.Address</h3>
+                    <div class="footer-menu">
+                        <p>@item.Phone</p>
+                        <p>@item.Email</p>
+                    </div>
+                        @Html.Action("DefaultFooterSocialPartial")
+                }
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>@DateTime.Now.Year &copy; <a href="/Default/Index">My Portfolio</a>,Tüm Hakları Saklıdır | FAK tarafından geliştirildi  <a href="https://htmlcodex.com">HTML Codex</a></p>
+        </div>
+    </div>
+</div>

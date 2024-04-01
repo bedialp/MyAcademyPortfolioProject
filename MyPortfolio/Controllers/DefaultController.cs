@@ -92,5 +92,17 @@ namespace MyPortfolio.Controllers
             var values = db.TblTeams.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult DefaultFooterPartial()
+        {
+            var values = db.TblContacts.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultFooterSocialPartial()
+        {
+            var values = db.TblSocialMedias.ToList();
+            return PartialView(values);
+        }
     }
 }

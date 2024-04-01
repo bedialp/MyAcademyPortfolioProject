@@ -399,6 +399,8 @@
     <Content Include="Views\Testimonial\Index.cshtml" />
     <Content Include="Views\Testimonial\AddTestimonial.cshtml" />
     <Content Include="Views\Testimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Default\DefaultFooterPartial.cshtml" />
+    <Content Include="Views\Default\DefaultFooterSocialPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

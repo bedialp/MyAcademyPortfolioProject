@@ -1,0 +1,18 @@
+﻿
+@model List<MyPortfolio.Models.TblSocialMedias>
+
+<style>
+    .footer-social:not(:last-child) {
+        margin-right: 30px; /* İstediğiniz boşluk miktarını ayarlayın */
+    }
+</style>
+
+<div class="footer-social d-flex flex-row justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="footer-social">
+            <a href="@item.Url"><i class="@item.Icon"></i></a>
+        </div>
+
+    }
+</div>
