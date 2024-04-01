@@ -1,0 +1,42 @@
+﻿@model List<MyPortfolio.Models.TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<h3>Kullanıcı Sayfası</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Status</th>
+
+        <th>Aktif</th>
+        <th>Pasif</th>
+       
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    +
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminId</td>
+            <td>@item.UserName</td>
+            <td>@item.Password</td>
+            <td>@item.Status</td>
+            <td><a href="/Admin/MakeActive/@item.AdminId" class="btn btn-outline-success">Aktif </a></td>
+            <td><a href="/Admin/MakePassive/@item.AdminId" class="btn btn-outline-secondary">Pasif </a></td>
+            <td><a href="/Admin/DeleteAdmin/@item.AdminId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateAdmin/@item.AdminId" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="/Admin/AddAdmin" class="btn btn-outline-dark">Yeni Kullanıcı Ekle</a>

@@ -1,0 +1,22 @@
+﻿@model MyPortfolio.Models.TblAdmin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<h2>Yeni Kullanıcı Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Kullanıcı Adı</label>
+    <input type="text" name="UserName" class="form-control" />
+    <br />
+    <label>Şifre</label>
+    <input type="text" name="Password" class="form-control" />
+    <br />
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+
+</form>
+

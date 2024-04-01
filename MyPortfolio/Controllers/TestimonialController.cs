@@ -16,18 +16,18 @@ namespace MyPortfolio.Controllers
             var values = db.TblTestimonials.ToList();
             return View(values);
         }
-   
-   
-    // REFERANS EKLEME İŞLEMİ 
-    [HttpGet]
-    public ActionResult AddTestimonial()
-    {
-        return View();
-    }
 
-    [HttpPost]
-    public ActionResult AddTestimonial(TblTestimonials referans)
-    {
+
+        // REFERANS EKLEME İŞLEMİ 
+        [HttpGet]
+        public ActionResult AddTestimonial()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddTestimonial(TblTestimonials referans)
+        {
             db.TblTestimonials.Add(referans);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -60,6 +60,21 @@ namespace MyPortfolio.Controllers
             value.Title = referans.Title;
             value.Status = referans.Status;
             value.CommentDate = referans.CommentDate;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        // AKTİF - PASİF BUTONU İŞLEMLERİ
+        public ActionResult MakeActive(int id)
+        {
+            var value = db.TblTestimonials.Find(id);
+            value.Status = true;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult MakePassive(int id)
+        {
+            var value = db.TblTestimonials.Find(id);
+            value.Status = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

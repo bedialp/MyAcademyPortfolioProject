@@ -31,6 +31,7 @@
           <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="TblCategories">
           <Key>
@@ -141,7 +142,7 @@
           <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="Title" Type="nvarchar" MaxLength="20" />
           <Property Name="Status" Type="bit" />
-          <Property Name="CommentDate" Type="datetime" />
+          <Property Name="CommentDate" Type="date" />
         </EntityType>
         <Association Name="FK_TblProjects_TblCategories">
           <End Role="TblCategories" Type="Self.TblCategories" Multiplicity="0..1" />
@@ -309,7 +310,7 @@
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="Boolean" />
-          <Property Name="CommentDate" Type="DateTime" Precision="3" />
+          <Property Name="CommentDate" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_TblProjects_TblCategories">
           <End Role="TblCategories" Type="Self.TblCategories" Multiplicity="0..1" />
@@ -350,6 +351,7 @@
           <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -503,6 +505,7 @@
           <EntitySetMapping Name="TblAdmins">
             <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblAdmin">
               <MappingFragment StoreEntitySet="TblAdmins">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="AdminId" ColumnName="AdminId" />
