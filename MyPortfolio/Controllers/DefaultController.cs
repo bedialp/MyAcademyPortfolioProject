@@ -21,8 +21,7 @@ namespace MyPortfolio.Controllers
         // FEATURE PARTIAL
         public PartialViewResult DefaultFeaturePartial()
         {
-            var values = db.TblFeatures.ToList();
-
+            var values = db.TblFeatures.Where(x => x.Status == true).ToList();
             return PartialView(values);
         }
 
