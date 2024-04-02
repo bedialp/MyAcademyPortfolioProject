@@ -1,0 +1,45 @@
+﻿@model List<MyPortfolio.Models.TblFeatures>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<br />
+<br />
+<br />
+<h3>Profil Sayfası</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Profil Fotoğrafı</th>
+        <th>İsim Soyisim</th>
+        <th>Meslek</th>
+        <th>Durum</th>
+
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+        <th>Aktif Yap</th>
+        <th>Pasif Yap</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td><img src="@item.ImageUrl" class="img-thumbnail" style="width:100px; height:100px; object-fit:cover" /></td>
+            <td>@item.NameSurname</td>
+            <td>@item.Title</td>
+            <td>@(item.Status == true ? "Aktif" : "Pasif")</td>
+            <td><a href="/Profile/DeleteProfile/@item.FetureId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Profile/UpdateProfile/@item.FetureId" class="btn btn-outline-info">Güncelle</a></td>
+            <td><a href="/Profile/MakeActive/@item.FetureId" class="btn btn-outline-success">Aktif </a></td>
+            <td><a href="/Profile/MakePassive/@item.FetureId" class="btn btn-outline-secondary">Pasif </a></td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="/Profile/AddProfile" class="btn btn-outline-dark">Yeni Profil Ekle</a>

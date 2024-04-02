@@ -70,6 +70,7 @@
           <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="TblMessages">
           <Key>
@@ -237,6 +238,7 @@
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblMessages">
           <Key>
@@ -415,6 +417,7 @@
           <EntitySetMapping Name="TblFeatures">
             <EntityTypeMapping TypeName="MyAcademyPortfolioProjectModel.TblFeatures">
               <MappingFragment StoreEntitySet="TblFeatures">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="FetureId" ColumnName="FetureId" />
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
