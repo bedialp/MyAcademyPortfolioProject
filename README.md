@@ -13,3 +13,4 @@
 ![GelenMesajlar](https://github.com/bedialp/MyAcademyPortfolioProject/assets/56656000/385e92e4-2ea1-4677-b719-7db29ce7d36b)
 ![iletisimBilgileri](https://github.com/bedialp/MyAcademyPortfolioProject/assets/56656000/4ee4e903-a4fb-4476-aa92-235b385caaaa)
 ![Sosyal Medya](https://github.com/bedialp/MyAcademyPortfolioProject/assets/56656000/7ea1b667-68bb-43b1-94fa-ad36b377b9c5)
+![tablolar ve iliskiler](https://github.com/bedialp/MyAcademyPortfolioProject/assets/56656000/8c8fab27-4340-49fe-aeba-80af520dff1c)
